@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo producto:</strong>
+  <%= @producto.codigo_producto %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @producto.nombre %>
+</p>
+
+<p>
+  <strong>Unidad:</strong>
+  <%= @producto.unidad %>
+</p>
+
+<p>
+  <strong>Valor unitario:</strong>
+  <%= @producto.valor_unitario %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @producto.cantidad %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @producto.marca.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_producto_path(@producto),class:"btn btn-warning" %> |
+<%= link_to 'Atras', productos_path,class:"btn btn-dark" %>

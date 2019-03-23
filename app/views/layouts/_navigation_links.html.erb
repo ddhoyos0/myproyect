@@ -1,0 +1,44 @@
+
+<li class="nav-item dropdown ">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Administracion
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="/users#index"><i class="fa fa-users"></i> Usuarios</a>
+    <a class="dropdown-item" href="/roles#index"><i class="fa fa-list-alt"></i> Roles</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</li>
+
+<li class='nav-item'>
+  <%= link_to 'About',static_pages_about_path, class: 'nav-link' %>
+</li>
+
+<li class='nav-item'>
+  <%= link_to 'Credit',static_pages_credit_path, class: 'nav-link' %>
+</li>
+
+<li class='nav-item'>
+  <%= link_to 'Help',static_pages_help_path, class: 'nav-link' %>
+</li>
+
+<li class='nav-item'>
+<%= link_to 'Productos',productos_path, class: 'nav-link' %>
+</li>
+
+<li class='nav-item'>
+<%= link_to 'Personas',personas_path, class: 'nav-link' %>
+</li>
+
+<li class='nav-item'>
+<%= link_to 'Marcas',marcas_path, class: 'nav-link' %>
+</li>
+
+<li>
+  <%= link_to "Salir", '', method: :delete, class: 'nav-link' %>
+</li>
+<li>
+  <%= link_to 'Ingresar', '', class: 'nav-link' %>
+</li>

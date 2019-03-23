@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cargo: MyString
+  turno: MyString
+  sexo: MyString
+  salario: 1
+  personas: one
+
+two:
+  cargo: MyString
+  turno: MyString
+  sexo: MyString
+  salario: 1
+  personas: two
