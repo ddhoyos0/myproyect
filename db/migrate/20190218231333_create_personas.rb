@@ -9,7 +9,7 @@ class CreatePersonas < ActiveRecord::Migration[5.2]
       t.string :celular
       t.string :correo
       t.date :fecha_nacimiento
-      t.references :documento, foreign_key: true
+      t.references :documento, foreign_key: true      
       t.timestamps
     end
   end

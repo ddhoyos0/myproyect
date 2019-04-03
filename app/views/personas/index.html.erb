@@ -1,15 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Personas</h1>
-<%= form_tag(personas_path, method: :get) do %>
-   <%= text_field_tag :term, params[:term] %>
-   <%= submit_tag 'Search', name: nil %>
-<% end %>
+<h1 align="center">Personas</h1>
 
-<table class="table table-responsive">
-  <thead>
+<table class="table">
+  <thead >
     <tr>
-      <th>Tipo documento</th>
+      <th>Documento</th>
       <th>Identificación</th>
       <th>Nombre</th>
       <th>Dirección</th>
@@ -17,7 +13,7 @@
       <th>Celular</th>
       <th>Email</th>
       <th>Fecha nacimiento</th>
-      <th colspan="2"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -41,10 +37,13 @@
 </table>
 </div>
 <br>
-<%= link_to 'Agregar Persona', new_persona_path,class:"btn btn-success" %>
-<div class="apple_pagination">
-  <div class="page_info">
-    <%= page_entries_info @tasks %>
+<div>
+  <%= link_to 'Añadir Persona', new_persona_path,class:"btn btn-success" %>
 </div>
+<br>
+<div class="apple_pagination">  
+  <div class="page_info">
+    <%= page_entries_info @personas %>
+  </div>
   <%= will_paginate @personas, :container => false %>
 </div>

@@ -5,5 +5,10 @@
   <%= @servicio.nombre %>
 </p>
 
+<p>
+  <strong>Duración:</strong>
+  <%= @servicio.duracion %>
+</p>
+
 <%= link_to 'Edit', edit_servicio_path(@servicio) %> |
 <%= link_to 'Back', servicios_path %>

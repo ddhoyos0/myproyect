@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_144120) do
+ActiveRecord::Schema.define(version: 2019_04_03_122303) do
+
+  create_table "categoria", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nombre"
+    t.bigint "empleado_id"
+    t.bigint "servicio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["empleado_id"], name: "index_categoria_on_empleado_id"
+    t.index ["servicio_id"], name: "index_categoria_on_servicio_id"
+  end
+
+  create_table "cita", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "servicio_id"
+    t.bigint "empleado_id"
+    t.datetime "fecha"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["empleado_id"], name: "index_cita_on_empleado_id"
+    t.index ["servicio_id"], name: "index_cita_on_servicio_id"
+    t.index ["user_id"], name: "index_cita_on_user_id"
+  end
 
   create_table "documentos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nombre"
@@ -20,13 +42,10 @@ ActiveRecord::Schema.define(version: 2019_03_13_144120) do
 
   create_table "empleados", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "cargo"
-    t.string "turno"
-    t.string "sexo"
-    t.integer "salario"
-    t.bigint "personas_id"
+    t.bigint "persona_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["personas_id"], name: "index_empleados_on_personas_id"
+    t.index ["persona_id"], name: "index_empleados_on_persona_id"
   end
 
   create_table "marcas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,11 +84,28 @@ ActiveRecord::Schema.define(version: 2019_03_13_144120) do
 
   create_table "servicios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nombre"
+    t.time "duracion", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "empleados", "personas", column: "personas_id"
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "categoria", "empleados"
+  add_foreign_key "categoria", "servicios"
+  add_foreign_key "cita", "empleados"
+  add_foreign_key "cita", "servicios"
+  add_foreign_key "cita", "users"
+  add_foreign_key "empleados", "personas"
   add_foreign_key "personas", "documentos"
   add_foreign_key "productos", "marcas"
 end

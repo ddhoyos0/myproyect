@@ -15,10 +15,7 @@ class EmpleadosTest < ApplicationSystemTestCase
     click_on "New Empleado"
 
     fill_in "Cargo", with: @empleado.cargo
-    fill_in "Personas", with: @empleado.personas_id
-    fill_in "Salario", with: @empleado.salario
-    fill_in "Sexo", with: @empleado.sexo
-    fill_in "Turno", with: @empleado.turno
+    fill_in "Persona", with: @empleado.persona_id
     click_on "Create Empleado"
 
     assert_text "Empleado was successfully created"
@@ -30,10 +27,7 @@ class EmpleadosTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Cargo", with: @empleado.cargo
-    fill_in "Personas", with: @empleado.personas_id
-    fill_in "Salario", with: @empleado.salario
-    fill_in "Sexo", with: @empleado.sexo
-    fill_in "Turno", with: @empleado.turno
+    fill_in "Persona", with: @empleado.persona_id
     click_on "Update Empleado"
 
     assert_text "Empleado was successfully updated"

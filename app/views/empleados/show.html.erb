@@ -6,24 +6,9 @@
 </p>
 
 <p>
-  <strong>Turno:</strong>
-  <%= @empleado.turno %>
+  <strong>Persona:</strong>
+  <%= @empleado.persona.nombre %>
 </p>
 
-<p>
-  <strong>Sexo:</strong>
-  <%= @empleado.sexo %>
-</p>
-
-<p>
-  <strong>Salario:</strong>
-  <%= @empleado.salario %>
-</p>
-
-<p>
-  <strong>Personas:</strong>
-  <%= @empleado.personas %>
-</p>
-
-<%= link_to 'Edit', edit_empleado_path(@empleado) %> |
-<%= link_to 'Back', empleados_path %>
+<%= link_to 'Editar', edit_empleado_path(@empleado) %> |
+<%= link_to 'Atras', empleados_path %>

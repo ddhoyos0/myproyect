@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :cita
+  devise_for :users
   resources :empleados
   resources :servicios
-  get 'static_pages/home'
-  get 'static_pages/help'
+  get 'static_pages/home'  
   get 'static_pages/about'
   get 'static_pages/credit'
+  get 'static_pages/help'
   resources :productos
   resources :marcas
   resources :personas

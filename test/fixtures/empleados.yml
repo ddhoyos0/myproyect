@@ -2,14 +2,8 @@
 
 one:
   cargo: MyString
-  turno: MyString
-  sexo: MyString
-  salario: 1
-  personas: one
+  persona: one
 
 two:
   cargo: MyString
-  turno: MyString
-  sexo: MyString
-  salario: 1
-  personas: two
+  persona: two

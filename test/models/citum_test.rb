@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CitaTest < ActiveSupport::TestCase
+class CitumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

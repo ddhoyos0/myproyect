@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Servicios</h1>
+<h1 align="center">Servicios</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
+      <th>Duración</th>    
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @servicios.each do |servicio| %>
       <tr>
         <td><%= servicio.nombre %></td>
+        <td><%= servicio.duracion %></td>        
         <td><%= link_to 'Show', servicio %></td>
         <td><%= link_to 'Edit', edit_servicio_path(servicio) %></td>
         <td><%= link_to 'Destroy', servicio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Servicio', new_servicio_path %>
+<%= link_to 'Añadir Servicio', new_servicio_path, class:"btn btn-success btn-sm" %>

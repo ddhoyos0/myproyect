@@ -2,6 +2,10 @@
 
 one:
   nombre: MyString
+  horaInicio: 2019-03-26 11:04:57
+  horaFin: 2019-03-26 11:04:57
 
 two:
   nombre: MyString
+  horaInicio: 2019-03-26 11:04:57
+  horaFin: 2019-03-26 11:04:57

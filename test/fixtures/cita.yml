@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  servicio: one
+  empleado: one
+  fecha: 2019-03-26 21:18:40
+  user: one
+
+two:
+  servicio: two
+  empleado: two
+  fecha: 2019-03-26 21:18:40
+  user: two

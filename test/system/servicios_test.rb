@@ -14,6 +14,8 @@ class ServiciosTest < ApplicationSystemTestCase
     visit servicios_url
     click_on "New Servicio"
 
+    fill_in "Horafin", with: @servicio.horaFin
+    fill_in "Horainicio", with: @servicio.horaInicio
     fill_in "Nombre", with: @servicio.nombre
     click_on "Create Servicio"
 
@@ -25,6 +27,8 @@ class ServiciosTest < ApplicationSystemTestCase
     visit servicios_url
     click_on "Edit", match: :first
 
+    fill_in "Horafin", with: @servicio.horaFin
+    fill_in "Horainicio", with: @servicio.horaInicio
     fill_in "Nombre", with: @servicio.nombre
     click_on "Update Servicio"
 

@@ -1,2 +1,0 @@
-class Cita < ApplicationRecord
-end
