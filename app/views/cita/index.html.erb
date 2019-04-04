@@ -16,10 +16,10 @@
   <tbody>
     <% @cita.each do |citum| %>
       <tr>
-        <td><%= citum.servicio %></td>
-        <td><%= citum.empleado %></td>
+        <td><%= citum.servicio.try(:nombre) %></td>
+        <td><%= citum.empleado.try(:nombre) %></td>
         <td><%= citum.fecha %></td>
-        <td><%= citum.user %></td>
+        <td><%= citum.user.try(:nombre) %></td>
         <td><%= link_to 'Ver', citum,  class:"btn btn-info btn-sm" %></td>
         <td><%= link_to 'Editar', edit_citum_path(citum),class:"btn btn-warning btn-sm" %></td>
         <td><%= link_to 'Eliminar', citum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,3 +31,11 @@
 <br>
 
 <%= link_to 'Añadir cita', new_citum_path, class:"btn btn-success btn-sm" %>
+  
+<div id="calendar"> </div>
+<script>
+    $('#calendar').fullCalendar({
+       citum: <%= @cita.to_json.html_safe %>
+    })
+</script>
+<br/>
