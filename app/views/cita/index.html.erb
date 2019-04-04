@@ -20,7 +20,7 @@
         <td><%= citum.empleado %></td>
         <td><%= citum.fecha %></td>
         <td><%= citum.user %></td>
-        <td><%= link_to 'Ver', citum %></td>
+        <td><%= link_to 'Ver', citum,  class:"btn btn-info btn-sm" %></td>
         <td><%= link_to 'Editar', edit_citum_path(citum) %></td>
         <td><%= link_to 'Eliminar', citum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
