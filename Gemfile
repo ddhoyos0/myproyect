@@ -70,5 +70,7 @@ gem 'simple_form'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem "select2-rails"
 gem 'devise'
+gem 'momentjs-rails'
+gem 'fullcalendar'
 
 

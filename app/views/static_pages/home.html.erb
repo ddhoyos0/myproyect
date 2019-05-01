@@ -1,5 +1,5 @@
 
-<h1 align="center">Bienvenido</h1>
+<h1 align="center">Trabajamos para resaltar tu belleza</h1>
 
 <div class="row">
   <div class="col-md-3"></div>
@@ -15,25 +15,25 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">       
+        <div class="carousel-item active">
           <%=link_to image_tag("mis_imagenes/IMG-20190226-WA0005.jpg"),class:"d-block w-100", alt:"First slide"%>
-        </div>     
+        </div>
         <div class="carousel-item">
           <%=link_to image_tag("mis_imagenes/IMG-20190226-WA0008.jpg"), class:"d-block w-100", alt:"Second slide"%>
         </div>
         <div class="carousel-item">
           <%=link_to image_tag("mis_imagenes/IMG-20190226-WA0013.jpg"), class:"d-block w-100" ,alt:"Third slide"%>
-        </div>          
+        </div>
         <div class="carousel-item">
           <%=link_to image_tag("mis_imagenes/WA0002.jpg",class:"d-block w-100", alt:"  fourth slide")%>
-        </div> 
+        </div>
         <div class="carousel-item">
           <%=link_to image_tag("mis_imagenes/WA0003.jpg",class:"d-block w-100", alt:"  fifth slide")%>
         </div>
        <div class="carousel-item">
         <%=link_to image_tag("mis_imagenes/WA0001.jpg",class:"d-block w-100", alt:"sixth slide")%>
-        </div>    
-      </div>  
+        </div>
+      </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -42,6 +42,48 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div> 
+    </div>
   </div>
 </div>
+<br>
+<footer>
+	<div class="info-container">
+    <div class="info-main">
+        <h3>CONTACTENOS</h3>
+        <p>Un espacio dedicado a hombres, mujeres y niños donde podrán acceder
+        a los más altos estándares de belleza y calidad, con las últimas tendencias mundiales.</p>
+        <a href="#">Mas Informacion</a>
+    </div>
+    <div class="footer-conteiner">
+        <div class="footer-main">
+          <div class="footer-columna">
+            <h3>Suscribete</h3>
+            </br>
+            <%= link_to 'Suscribete', edit_user_registration_path, :class=>'nav-link',style: 'color:white;',class:"btn btn-primary "  %>
+          </div>
+          <div class="footer-columna">
+            <h3>Direccion</h3>
+            <span class="fas fa-map-marker" style="font-size:18px"><p>Cr 55D #44-15</p> </span>
+            <span class="fas fa-phone" style="font-size:18px"><p>+57 3735256</p></span>
+            <span class="fas fa-envelope" style="font-size:18px"><p>info@PeinArte.com</p></span>
+          </div>
+          <div class="footer-columna">
+            <h2>Sobre Nosotros</h2>
+            <p>Atendido por expertos con los mejores productos del mercado.</p>
+            <p>• VISÍTENOS HOY •</p>
+          </div>
+      </div>
+    </div>
+  	<div class="footer-copy-redes">
+    	<div class="main-copy-redes" align="center">
+    		<div class="footer-copy">
+	     		© copyright SENA - Centro de Formacion en Diseño, Confeccion y Moda - 2018.
+	   		</div>
+	   		<div class="footer-redes"style="text-align: center;">
+  	      <a href="#" class="fab fa-facebook" style="font-size:36px"></a>
+    	    <a href="#" class="fab fa-twitter" style="font-size:36px"></a>
+    	    <a href="#" class="fab fa-instagram" style="font-size:36px"></a>
+			</div>
+    	</div>
+  	</div>
+</footer>

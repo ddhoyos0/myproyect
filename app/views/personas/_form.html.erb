@@ -52,7 +52,8 @@
     </div>
 
     <div class="col-md-4 mb-1"align="left">          
-      <%= f.input :fecha_nacimiento%>
+      <%= f.input :fecha_nacimiento, as: :date, start_year: Date.today.year - 90,
+        end_year: Date.today.year,order: [:day, :month, :year]%>
     </div>
     
   </div>

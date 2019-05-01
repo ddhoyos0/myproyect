@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_122303) do
-
-  create_table "categoria", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nombre"
-    t.bigint "empleado_id"
-    t.bigint "servicio_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["empleado_id"], name: "index_categoria_on_empleado_id"
-    t.index ["servicio_id"], name: "index_categoria_on_servicio_id"
-  end
+ActiveRecord::Schema.define(version: 2019_03_27_021840) do
 
   create_table "cita", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "servicio_id"
@@ -84,7 +74,7 @@ ActiveRecord::Schema.define(version: 2019_04_03_122303) do
 
   create_table "servicios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nombre"
-    t.time "duracion", null: false
+    t.datetime "duracion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -100,8 +90,6 @@ ActiveRecord::Schema.define(version: 2019_04_03_122303) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categoria", "empleados"
-  add_foreign_key "categoria", "servicios"
   add_foreign_key "cita", "empleados"
   add_foreign_key "cita", "servicios"
   add_foreign_key "cita", "users"
