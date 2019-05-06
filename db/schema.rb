@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_27_021840) do
+ActiveRecord::Schema.define(version: 2019_05_05_212639) do
 
   create_table "cita", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "servicio_id"
     t.bigint "empleado_id"
-    t.datetime "fecha"
+    t.date "fecha"
+    t.time "hora"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,6 +37,14 @@ ActiveRecord::Schema.define(version: 2019_03_27_021840) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["persona_id"], name: "index_empleados_on_persona_id"
+  end
+
+  create_table "impuestos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "valor"
+    t.boolean "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "marcas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -74,7 +83,24 @@ ActiveRecord::Schema.define(version: 2019_03_27_021840) do
 
   create_table "servicios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nombre"
-    t.datetime "duracion"
+    t.time "duracion"
+    t.integer "precio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "tipo_de_servicio_id"
+    t.bigint "impuesto_id"
+    t.index ["impuesto_id"], name: "fk_servicios_2_idx"
+    t.index ["tipo_de_servicio_id"], name: "fk_servicios_1_idx"
+  end
+
+  create_table "sexos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tipo_de_servicios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,4 +122,6 @@ ActiveRecord::Schema.define(version: 2019_03_27_021840) do
   add_foreign_key "empleados", "personas"
   add_foreign_key "personas", "documentos"
   add_foreign_key "productos", "marcas"
+  add_foreign_key "servicios", "impuestos", name: "fk_servicios_2"
+  add_foreign_key "servicios", "tipo_de_servicios", name: "fk_servicios_1"
 end

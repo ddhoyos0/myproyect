@@ -69,7 +69,7 @@ class PersonasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def persona_params
-      params.require(:persona).permit(:documento_id, :identificacion, :nombre, :direccion, :telefono, :celular, :correo, :fecha_nacimiento)
+      params.require(:persona).permit(:sexo_id, :documento_id, :identificacion, :nombre, :direccion, :telefono, :celular, :correo, :fecha_nacimiento)
     end
     # buscador con ajaz
     def search

@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Tipo de Servicio:</strong>
+  <%= @servicio.tipo_de_servicio.nombre %>
+</p>
+
+<p>
   <strong>Nombre:</strong>
   <%= @servicio.nombre %>
 </p>
@@ -10,5 +15,15 @@
   <%= @servicio.duracion %>
 </p>
 
-<%= link_to 'Edit', edit_servicio_path(@servicio) %> |
-<%= link_to 'Back', servicios_path %>
+<p>
+  <strong>Precio:</strong>
+  <%= @servicio.precio %>
+</p>
+
+<p>
+  <strong>Iva:</strong>
+  <%= @servicio.impuesto.valor %>
+</p>
+
+<%= link_to 'Editar', edit_servicio_path(@servicio) %> |
+<%= link_to 'Atras', servicios_path %>

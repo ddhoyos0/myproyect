@@ -3,47 +3,49 @@
 <h1 align="center">Personas</h1>
 
 <table class="table">
-  <thead >
-    <tr>
-      <th>Documento</th>
-      <th>Identificación</th>
-      <th>Nombre</th>
-      <th>Dirección</th>
-      <th>Telefono</th>
-      <th>Celular</th>
-      <th>Email</th>
-      <th>Fecha nacimiento</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+	<thead >
+		<tr>
+			<th>Tipo de Documento</th>
+			<th>Identificación</th>
+			<th>Nombre</th>
+			<th>Dirección</th>
+			<th>Telefono</th>
+			<th>Celular</th>
+			<th>Email</th>
+			<th>Fecha de Nacimiento</th>
+			<th>Sexo</th>
+			<th colspan="3"></th>
+			</tr>
+	</thead>
 
-  <tbody>
-    <% @personas.each do |persona| %>
-      <tr>
-        <td><%= persona.documento.try(:nombre)%></td>
-        <td><%= persona.identificacion %></td>
-        <td><%= persona.nombre %></td>
-        <td><%= persona.direccion %></td>
-        <td><%= persona.telefono %></td>
-        <td><%= persona.celular %></td>
-        <td><%= persona.correo %></td>
-        <td><%= persona.fecha_nacimiento%></td>
-        <td><%= link_to 'ver', persona, class:"btn btn-info btn-sm"%></td>
-        <td><%= link_to 'Editar', edit_persona_path(persona),class:"btn btn-warning btn-sm" %></td>
-        <td><%= link_to 'Eliminar', persona, method: :delete, data: { confirm: 'Esta seguro?' },class:"btn btn-danger btn-sm" %></td>
-      </tr>
-    <% end %>
+	<tbody>
+		<% @personas.each do |persona| %>
+		<tr>
+			<td><%= persona.documento.try(:nombre)%></td>
+			<td><%= persona.identificacion %></td>
+			<td><%= persona.nombre %></td>
+			<td><%= persona.direccion %></td>
+			<td><%= persona.telefono %></td>
+			<td><%= persona.celular %></td>
+			<td><%= persona.correo %></td>
+			<td><%= persona.fecha_nacimiento%></td>
+			<td><%= persona.sexo.try(:nombre)%></td>
+			<td><%= link_to 'Mostrar', persona, class:"btn btn-info btn-sm"%></td>
+			<td><%= link_to 'Editar', edit_persona_path(persona),class:"btn btn-warning btn-sm" %></td>
+			<td><%= link_to 'Eliminar', persona, method: :delete, data: { confirm: 'Esta seguro?' },class:"btn btn-danger btn-sm" %></td>
+		</tr>
+		<% end %>
   </tbody>
 </table>
-</div>
+
 <br>
 <div>
   <%= link_to 'Añadir Persona', new_persona_path,class:"btn btn-success" %>
 </div>
 <br>
 <div class="apple_pagination">  
-  <div class="page_info">
+	<div class="page_info">
     <%= page_entries_info @personas %>
-  </div>
-  <%= will_paginate @personas, :container => false %>
+	</div>
+  	<%= will_paginate @personas, :container => false %>
 </div>

@@ -1,5 +1,6 @@
 class Persona < ApplicationRecord
   belongs_to :documento
+  belongs_to :sexo
   
   has_many :empleado
   def name
