@@ -8,7 +8,9 @@ img {
     margin: 0 auto;
 }
 
-
+.thead{
+  background-color: #272727;
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -54,14 +56,15 @@ html {
     width: 500px;
 }
 h1,.input,label{
- color: #000;
+ color: #0C96B2; 
 }
 
-
+//imagen de fondo del proyecto
 body {
+  
   /* Margin bottom by footer height */
   margin-bottom: 60px;  
-  background-image:url('mis_imagenes/fotoproyecto.jpg');
+  //background-image:url('mis_imagenes/indice.jpeg');
 }
 .footer {
   position: absolute;

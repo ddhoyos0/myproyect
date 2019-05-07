@@ -1,52 +1,61 @@
 <p id="notice"><%= notice %></p>
-<div class="container" >
-	<div class="card-header">
-		<p>
-			<strong>Tipo documento:</strong>
-			<%= @persona.documento.nombre %>
-		</p>
+<div class="container">
+	<div class= "row">	
+    <div class="col-md-4 mb-1"> 
+		</div>		
+		<div class="card"style="width: 23rem;" >
+			<div class="card-body">
+				<p>
+					<strong>Tipo documento:</strong>
+					<%= @persona.documento.nombre %>
+				</p>
 
-		<p>
-			<strong>Identificación:</strong>
-			<%= @persona.identificacion %>
-		</p>
+				<p>
+					<strong>Identificación:</strong>
+					<%= @persona.identificacion %>
+				</p>
 
-		<p>
-			<strong>Nombre:</strong>
-			<%= @persona.nombre %>
-		</p>
+				<p>
+					<strong>Nombre:</strong>
+					<%= @persona.nombre %>
+				</p>
 
-		<p>
-			<strong>Dirección:</strong>
-			<%= @persona.direccion %>
-		</p>
+				<p>
+					<strong>Dirección:</strong>
+					<%= @persona.direccion %>
+				</p>
 
-		<p>
-			<strong>Telefono:</strong>
-			<%= @persona.telefono %>
-		</p>
+				<p>
+					<strong>Telefono:</strong>
+					<%= @persona.telefono %>
+				</p>
 
-		<p>
-			<strong>Celular:</strong>
-			<%= @persona.celular %>
-		</p>
+				<p>
+					<strong>Celular:</strong>
+					<%= @persona.celular %>
+				</p>
 
-		<p>
-			<strong>Email:</strong>
-			<%= @persona.correo %>
-		</p>
+				<p>
+					<strong>Email:</strong>
+					<%= @persona.correo %>
+				</p>
 
-		<p>
-			<strong>Fecha nacimiento:</strong>
-			<%= @persona.fecha_nacimiento %>
-		</p>
+				<p>
+					<strong>Fecha nacimiento:</strong>
+					<%= @persona.fecha_nacimiento %>
+				</p>
 
-		<p>
-			<strong>Sexo:</strong>
-			<%= @persona.sexo.nombre %>
-		</p>
-  </div>
+				<p>
+					<strong>Sexo:</strong>
+					<%= @persona.sexo.nombre %>
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 <br/>
-<%= link_to 'Editar', edit_persona_path(@persona), class:"btn btn-warning" %> |
-<%= link_to 'Atras', personas_path, class:"btn btn-dark" %>
+<div class="col-md-12 mb-1" align="center"> 
+	<%= link_to 'Editar', edit_persona_path(@persona), class:"btn btn-warning" %> |
+	<%= link_to 'Atras', personas_path, class:"btn btn-dark" %>
+</div>
+

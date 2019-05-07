@@ -1,69 +1,73 @@
 <%= simple_form_for(@persona, local: true) do |f| %>
-  <% if persona.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(persona.errors.count, "error") %> prohibited this persona from being saved:</h2>
+<% if persona.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(persona.errors.count, "error") %> prohibited this persona from being saved:</h2>
 
-      <ul>
-        <% persona.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>    
-  <div class="row"align ="right">
-    <div class="col-md-4 mb-1">      
-      <%= f.association :documento %>
-    </div>
+  <ul>
+    <% persona.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="card">
+  <div class="card-body">
+    <div class="row" align="right">
+      <div class="col-md-4 mb-1">
+        <%= f.association :documento,prompt: :translate %>
+      </div>
 
-    <div class="col-md-4 mb-1">
-      <%= f.label :identificacion %>
-      <%= f.text_field :identificacion %>
-    </div>
+      <div class="col-md-4 mb-1">
+        <%= f.label :identificacion %>
+        <%= f.text_field :identificacion %>
+      </div>
 
-    <div class="col-md-4 mb-1">
-      <%= f.label :nombre %>
-      <%= f.text_field :nombre %>
-    </div>
+      <div class="col-md-4 mb-1">
+        <%= f.label :nombre %>
+        <%= f.text_field :nombre %>
+      </div>
 
+    </div>
+    <br />
+    <div class="row" align="right">
+      <div class="col-md-4 mb-1">
+        <%= f.label :direccion %>
+        <%= f.text_field :direccion %>
+      </div>
+
+      <div class="col-md-4 mb-1">
+        <%= f.label :telefono %>
+        <%= f.text_field :telefono %>
+      </div>
+
+      <div class="col-md-4 mb-1">
+        <%= f.label :celular %>
+        <%= f.text_field :celular %>
+      </div>
+    </div>
+    <br />
+    <div class="row" align="right">
+
+      <div class="col-md-4 mb-1">
+        <%= f.input :correo,input_html: { autocomplete: 'email' } %>
+      </div>
+
+      <div class="col-md-4 mb-1" align="left">
+        <%= f.input :fecha_nacimiento, as: :date, start_year: Date.today.year - 90,
+              end_year: Date.today.year,order: [:day, :month, :year]%>
+      </div>
+
+      <div class="col-md-4 mb-1">
+        <%= f.association :sexo,prompt: :translate  %>
+      </div>
+
+    </div>
+    <div class="actions" align="center">
+      <%= f.submit "Guardar",class:"btn btn-success" %>
+    </div>
   </div>
-  <br/>
-  <div class="row"align="right">
-    <div class="col-md-4 mb-1">
-      <%= f.label :direccion %>
-      <%= f.text_field :direccion %>
-    </div>
+</div>
 
-    <div class="col-md-4 mb-1">
-      <%= f.label :telefono %>
-      <%= f.text_field :telefono %>
-    </div>
 
-    <div class="col-md-4 mb-1">
-      <%= f.label :celular %>
-      <%= f.text_field :celular %>
-    </div>
-  </div>
-  <br/>
-  <div class="row"align= "right">
 
-    <div class="col-md-4 mb-1">
-      <%= f.label :Email %>
-      <%= f.text_field :correo %>
-    </div>
-
-    <div class="col-md-4 mb-1"align="left">          
-      <%= f.input :fecha_nacimiento, as: :date, start_year: Date.today.year - 90,
-        end_year: Date.today.year,order: [:day, :month, :year]%>
-    </div>
-
-    <div class="col-md-4 mb-1">
-      <%= f.label :Sexo %>
-      <%= f.association :sexo %>
-    </div>
-    
-  </div>
-  <div class="actions" align="center">
-    <%= f.submit "Guardar",class:"btn btn-success" %>  
-  </div>
- 
 <% end %>

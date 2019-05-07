@@ -1,6 +1,6 @@
 class Impuesto < ApplicationRecord
   has_many :servicios
 	def name
-  		self.nombre
+  		self.valor
 	end
 end

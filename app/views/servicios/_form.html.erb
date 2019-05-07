@@ -5,7 +5,7 @@
   
   <div class="row"align ="right">
     <div class="col-md-4 mb-1">      
-      <%= f.association :tipo_de_servicio %>
+      <%= f.association :tipo_de_servicio,prompt: :translate %>
     </div> 
     <div class="col-md-4 mb-1">        
       <%= f.input :nombre %>            
@@ -17,7 +17,7 @@
       <%= f.input :precio %>
     </div>  
      <div class="col-md-4 mb-1">
-      <%= f.association :impuesto %>
+      <%= f.association :impuesto,prompt: :translate %>
     </div>          
   </div>
   <div class="form-actions"align ="center">
