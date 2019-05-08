@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div class="container" >
+  <div class= "row">	
+    <div class="col-md-4 mb-1"></div>	
+    <div class="card"style="width:20rem;" 
+      <div class="card-body">	
+        <p>
+          <strong>Cargo:</strong>
+          <%= @empleado.cargo %>
+        </p>
 
-<p>
-  <strong>Cargo:</strong>
-  <%= @empleado.cargo %>
-</p>
-
-<p>
-  <strong>Persona:</strong>
-  <%= @empleado.persona.nombre %>
-</p>
-
-<%= link_to 'Editar', edit_empleado_path(@empleado) %> |
-<%= link_to 'Atras', empleados_path %>
+        <p>
+          <strong>Persona:</strong>
+          <%= @empleado.persona.nombre %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</br>
+<div class="col-md-12 mb-1" align="center">
+  <%= link_to 'Editar', edit_empleado_path(@empleado) ,class:"btn btn-warning"%> |
+  <%= link_to 'Atras', empleados_path, class:"btn btn-dark" %>
+</div>

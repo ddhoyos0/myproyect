@@ -1,6 +1,7 @@
-<h1>Editar Empleado</h1>
+<h1 align="center">Editar Empleado</h1>
 
 <%= render 'form', empleado: @empleado %>
-
-<%= link_to 'Ver', @empleado %> |
-<%= link_to 'Atras', empleados_path %>
+<div align="center">
+    <%= link_to 'Mostrar', @empleado , class:"btn btn-warning"%> |
+    <%= link_to 'Atras', empleados_path, class:"btn btn-dark " %>
+</div>
