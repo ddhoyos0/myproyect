@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Impuestos</h1>
+<h1 align="center">Impuestos</h1>
 
 <table class="table">
   <thead>
@@ -18,14 +18,15 @@
         <td><%= impuesto.nombre %></td>
         <td><%= impuesto.valor %></td>
         <td><%= impuesto.estado %></td>
-        <td><%= link_to 'Mostrar', impuesto %></td>
-        <td><%= link_to 'Editar', edit_impuesto_path(impuesto) %></td>
-        <td><%= link_to 'Eliminar', impuesto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', impuesto , class:"btn btn-info btn-sm"%></td>
+        <td><%= link_to 'Editar', edit_impuesto_path(impuesto),class:"btn btn-warning btn-sm" %></td>
+        <td><%= link_to 'Eliminar', impuesto, method: :delete, data: { confirm: 'Are you sure?' } ,class:"btn btn-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Impuesto', new_impuesto_path %>
+<div>
+  <%= link_to 'Guardar', new_impuesto_path ,class:"btn btn-success"%>
+</div>
