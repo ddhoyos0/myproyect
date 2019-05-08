@@ -1,6 +1,7 @@
 <h1>Editar cita</h1>
 
 <%= render 'form', citum: @citum %>
-
-<%= link_to 'Mostrar', @citum , class:"btn btn-warning" %> |
-<%= link_to 'Atras', cita_path, class:"btn btn-dark " %>
+<div class="row">
+    <%= link_to 'Mostrar', @citum , class:"btn btn-warning" %> |
+    <%= link_to 'Atras', cita_path, class:"btn btn-dark " %>
+</div>

@@ -2,8 +2,8 @@ development:
   adapter: mysql2
   encoding: utf8
   database: db_development
-  username: deymer
-  password: deymer1990
+  username: juli
+  password: 
   host: 127.0.0.1
   port: 3306
 

@@ -2,30 +2,36 @@
 <%= simple_form_for(@citum) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  
-  <div class="row"align="right"> 
-    <div class="col-md-4 ">
-      <%= f.association :servicio %>
-    </div>
-    <div class="col-md-4 ">
-      <%= f.association :empleado %>
-    </div>
-    <div class="col-md-4 ">
-      <%= f.input :fecha %>
+  <div class="card">
+    <div class="card-body">
+      <div class="row"> 
+        <div class="col-md-4 mb-1 ">
+          <%= f.association :servicio,prompt: :translate %>
+        </div>
+
+        <div class="col-md-4 mb-1 ">
+          <%= f.association :empleado,prompt: :translate %>
+        </div>       
+      </div>
+      </br>
+      <div class="row">
+        <div class="col-md-4 mb-1 ">
+          <%= f.input :fecha, as: :date, start_year: Date.today.year - 90,
+          end_year: Date.today.year,order: [:day, :month, :year] %>
+        </div>
+        
+        <div class="col-md-4 mb-1 ">
+          <%= f.input :hora %>
+        </div>
+
+      
+      </div>
+      </br>
+      <div class="form-actions" align="center">
+        <%= f.button :submit ,class:"btn btn-success" %>
+      </div>
     </div>
   </div>
-  <div class="row"align="right">
-    <div class="col-md-4 ">
-      <%= f.input :hora %>
-    </div>
-    <div class="col-md-4 ">
-      <%= f.association :user %>
-    </div>
-  </div>
-  
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-  
+
 <% end %>
 
