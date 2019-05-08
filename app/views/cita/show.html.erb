@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
 	<div class= "row">	
-    <div class="col-md-4 mb-1"> 
-    </div>		
-		<div class="card"style="width: 23rem;" >
+    <div class="col-md-4 mb-1"></div>		
+      <p align="center">
+    <div class="card"style="width:28rem;" >
 			<div class="card-body">
         <p>
           <strong>Servicio:</strong>
@@ -26,10 +26,12 @@
         </p>
 
       </div>
-     </div>
-   </div>
- </div>
- <br/>
- <div class="col-md-12 mb-1" align="center"> 
-<%= link_to 'Editar', edit_citum_path(@citum),class:"btn btn-warning" %> |
-<%= link_to 'Atras', cita_path , class:"btn btn-warning"%>
+    </div>
+    </p>
+  </div>
+</div>
+<br/>
+<div class="col-md-12 mb-1" align="center"> 
+  <%= link_to 'Editar', edit_citum_path(@citum),class:"btn btn-warning" %> 
+  <%= link_to 'Atras', cita_path , class:"btn btn-warning"%>
+</div>

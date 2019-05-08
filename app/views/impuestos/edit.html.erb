@@ -1,6 +1,10 @@
-<h1>Editing Impuesto</h1>
+<h1 align="center">Editar Impuesto</h1>
 
 <%= render 'form', impuesto: @impuesto %>
+<div align="center">
+    <%= link_to 'Mostrar', @impuesto, class:"btn btn-warning" %> |
+    <%= link_to 'Atras', impuestos_path, class:"btn btn-dark " %>
+</div>
 
-<%= link_to 'Show', @impuesto %> |
-<%= link_to 'Back', impuestos_path %>
+
+
