@@ -19,40 +19,29 @@
 //= require bootstrap
 //= require select2
 //= require select2-full
+//= require moment
+//= require fullcalendar
 //= require calendar
 //= require turbolinks
 //= require_tree .
 
 
+function eventCalendar() {
+  return $('#calendar').fullCalendar({ });
+};
 
-document.addEventListener("turbolinks:load", function() {
-
-    return $('.select2Persona').select2({
-       theme: 'bootstrap',
-       minimumInputLength: 3,
-       maximumInputLength: 20,
-       ajax: {
-         url: '/personas/search.json',
-         dataType: 'json',
-         delay: 250,
-         data: function(params) {
-           return {
-             q: params.term,
-             page: params.page
-           };
-         },
-         processResults: function(data) {
-           return {
-             results: $.map(data, function(item) {
-               return {
-                 text: item.name,
-                 id: item.id
-               };
-             })
-           };
-         }
-       }
-     });
-   });
+function clearCalendar() {
+  $('#calendar').fullCalendar('delete'); 
+  $('#calendar').html('');
+};
  
 
+$(document).on('turbolinks:load', function(){
+  eventCalendar();  
+});
+
+$(document).on('turbolinks:before-cache', clearCalendar);
+
+$('#calendar').fullCalendar({ 
+  cita: '/cita.json'
+});

@@ -4,33 +4,32 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="card">
     <div class="card-body">
-      <div class="row"> 
+      <div class="row">
         <div class="col-md-4 mb-1 ">
-          <%= f.association :servicio,prompt: :translate %>
+          <%= f.association :servicio, prompt: :translate %>
         </div>
 
         <div class="col-md-4 mb-1 ">
-          <%= f.association :empleado,prompt: :translate %>
-        </div>       
+          <%= f.association :empleado, prompt: :translate %>
+        </div>
       </div>
-      </br>
+      <br>
       <div class="row">
         <div class="col-md-4 mb-1 ">
           <%= f.input :fecha, as: :date, start_year: Date.today.year - 90,
           end_year: Date.today.year,order: [:day, :month, :year] %>
         </div>
-        
+
         <div class="col-md-4 mb-1 ">
           <%= f.input :hora %>
         </div>
 
-      
+
       </div>
-      </br>
+      <br>
       <div class="form-actions" align="center">
         <%= f.button :submit, "Guardar" ,class:"btn btn-success" %>
       </div>
     </div>
   </div>
 <% end %>
-

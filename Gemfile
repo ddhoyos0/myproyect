@@ -72,6 +72,7 @@ gem "select2-rails"
 gem 'devise'
 gem 'momentjs-rails'
 gem 'fullcalendar'
+gem 'fullcalendar-rails'
 
 
 
