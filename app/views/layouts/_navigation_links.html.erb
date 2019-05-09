@@ -3,27 +3,33 @@
     Información
   </a>
   <div class="dropdown-menu" >
-    <ul class="dropdown-item" role="menu" >       
+    <ul class="dropdown-item" role="menu" >
       <li><%= link_to 'Ayuda', static_pages_help_path,  class: 'nav-link' ,style: 'color:black;'%></li>
-      <li><%= link_to 'Creditos', static_pages_credit_path,  class: 'nav-link' ,style: 'color:black;'%></li>    
-    </ul>     
+      <li><%= link_to 'Creditos', static_pages_credit_path,  class: 'nav-link' ,style: 'color:black;'%></li>
+    </ul>
   </div>
 </li>
-
-<li >
-  <%= link_to 'Marcas',marcas_path, class: 'nav-link' ,style: 'color:white;'%>
+<li class="nav-item dropdown ">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style= 'color:white;'>
+    Contactos
+  </a>
+  <div class="dropdown-menu" >
+    <ul class="dropdown-item" role="menu" >
+      <li><%= link_to 'Contactos',personas_path, class: 'nav-link',style: 'color:black;'%></li>
+      <li><%= link_to 'Empleados',empleados_path, class: 'nav-link' ,style: 'color:black;'%></li>
+    </ul>
+  </div>
 </li>
-
-<li >
-  <%= link_to 'Productos',productos_path, class: 'nav-link',style: 'color:white;'%>
-</li>
-
-<li>
-  <%= link_to 'Contactos',personas_path, class: 'nav-link',style: 'color:white;'%>
-</li>
-
-<li >
-  <%= link_to 'Empleados',empleados_path, class: 'nav-link' ,style: 'color:white;'%>
+<li class="nav-item dropdown ">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" style= 'color:white;'>
+    Productos
+  </a>
+  <div class="dropdown-menu" >
+    <ul class="dropdown-item" role="menu" >
+      <li><%= link_to 'Productos',productos_path, class: 'nav-link',style: 'color:black;'%></li>
+      <li><%= link_to 'Marcas',marcas_path, class: 'nav-link' ,style: 'color:black;'%></li>
+    </ul>
+  </div>
 </li>
 
 <li class="nav-item dropdown ">
@@ -31,12 +37,11 @@
     Servicios
   </a>
   <div class="dropdown-menu" >
-    <ul class="dropdown-item" role="menu" > 
-      <%= link_to 'Servicios',servicios_path, class: 'nav-link' ,style: 'color:black;'%>    
-      <%= link_to 'Tipo de Servicio',tipo_de_servicios_path,class: 'nav-link' ,style: 'color:black;'%>
-    </ul>     
+    <ul class="dropdown-item" role="menu" >
+      <li><%= link_to 'Servicios',servicios_path, class: 'nav-link' ,style: 'color:black;'%></li>
+      <li><%= link_to 'Tipo de Servicio',tipo_de_servicios_path,class: 'nav-link' ,style: 'color:black;'%></li>
+    </ul>
   </div>
- 
 </li>
 
 <li >
@@ -54,12 +59,11 @@
   </li>
 
   <%= link_to 'Editar usuario', edit_user_registration_path, :class=>'nav-link',style: 'color:white;'  %>
-  <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'nav-link',style: 'color:white;' %>    
+  <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'nav-link',style: 'color:white;' %>
 
 <% else %>
 
-  <%= link_to "Regístrate", new_user_registration_path, :class => 'nav-link' ,style: 'color:white;'  %> 
+  <%= link_to "Regístrate", new_user_registration_path, :class => 'nav-link' ,style: 'color:white;'  %>
   <%= link_to "Iniciar sesión", new_user_session_path, :class => 'nav-link',style: 'color:white;'   %>
 
 <% end %>
-

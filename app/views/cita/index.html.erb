@@ -4,11 +4,19 @@
 
 <table class="table">
   <thead >
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.0/fullcalendar.min.css"
+    rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.0/fullcalendar.print.css"
+    rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js">
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.0/fullcalendar.min.js">
+    </script>
     <tr>
       <th >Servicio</th>
       <th>Empleado</th>
       <th>Fecha</th>
-      <th>Hora</th>    
+      <th>Hora</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,11 +39,9 @@
 <br>
 
 <%= link_to 'Añadir cita', new_citum_path, class:"btn btn-success btn-sm" %>
-
 <div id="calendar"> </div>
 <script>
-    $('#calendar').fullCalendar({
-       citum: <%= @cita.to_json.html_safe %>
-    })
+    $('#calendar').fullCalendar({ citum: <%= @cita.to_json.html_safe %>})
 </script>
+
 <br/>

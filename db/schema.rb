@@ -17,12 +17,10 @@ ActiveRecord::Schema.define(version: 2019_05_05_212639) do
     t.bigint "empleado_id"
     t.date "fecha"
     t.time "hora"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["empleado_id"], name: "index_cita_on_empleado_id"
     t.index ["servicio_id"], name: "index_cita_on_servicio_id"
-    t.index ["user_id"], name: "index_cita_on_user_id"
   end
 
   create_table "documentos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,11 +61,11 @@ ActiveRecord::Schema.define(version: 2019_05_05_212639) do
     t.string "correo"
     t.date "fecha_nacimiento"
     t.bigint "documento_id"
-    t.bigint "sexo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sexo_id"
     t.index ["documento_id"], name: "index_personas_on_documento_id"
-    t.index ["sexo_id"], name: "index_personas_on_sexo_id"
+    t.index ["sexo_id"], name: "fk_personas_1_idx"
   end
 
   create_table "productos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,12 +85,12 @@ ActiveRecord::Schema.define(version: 2019_05_05_212639) do
     t.string "nombre"
     t.time "duracion"
     t.integer "precio"
-    t.bigint "tipo_de_servicio_id"
-    t.bigint "impuestos_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["impuestos_id"], name: "index_servicios_on_impuestos_id"
-    t.index ["tipo_de_servicio_id"], name: "index_servicios_on_tipo_de_servicio_id"
+    t.bigint "tipo_de_servicio_id"
+    t.bigint "impuesto_id"
+    t.index ["impuesto_id"], name: "fk_servicios_2_idx"
+    t.index ["tipo_de_servicio_id"], name: "fk_servicios_1_idx"
   end
 
   create_table "sexos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -120,11 +118,10 @@ ActiveRecord::Schema.define(version: 2019_05_05_212639) do
 
   add_foreign_key "cita", "empleados"
   add_foreign_key "cita", "servicios"
-  add_foreign_key "cita", "users"
   add_foreign_key "empleados", "personas"
   add_foreign_key "personas", "documentos"
-  add_foreign_key "personas", "sexos"
+  add_foreign_key "personas", "sexos", name: "fk_personas_1"
   add_foreign_key "productos", "marcas"
-  add_foreign_key "servicios", "impuestos", column: "impuestos_id"
-  add_foreign_key "servicios", "tipo_de_servicios"
+  add_foreign_key "servicios", "impuestos", name: "fk_servicios_2"
+  add_foreign_key "servicios", "tipo_de_servicios", name: "fk_servicios_1"
 end

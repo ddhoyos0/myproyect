@@ -2,7 +2,7 @@
 
 <h1>Tipo De Servicios</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -14,14 +14,12 @@
     <% @tipo_de_servicios.each do |tipo_de_servicio| %>
       <tr>
         <td><%= tipo_de_servicio.nombre %></td>
-        <td><%= link_to 'Show', tipo_de_servicio %></td>
-        <td><%= link_to 'Edit', edit_tipo_de_servicio_path(tipo_de_servicio) %></td>
-        <td><%= link_to 'Destroy', tipo_de_servicio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', tipo_de_servicio,class:"btn btn-info btn-sm" %></td>
+        <td><%= link_to 'Editar', edit_tipo_de_servicio_path(tipo_de_servicio), class:"btn btn-warning btn-sm" %></td>
+        <td><%= link_to 'Eliminar', tipo_de_servicio, method: :delete, data: { confirm: 'Esta seguro?' },class:"btn btn-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Tipo De Servicio', new_tipo_de_servicio_path %>
+<%= link_to 'Añadir Tipo De Servicio', new_tipo_de_servicio_path, class:"btn btn-success btn-sm" %>
