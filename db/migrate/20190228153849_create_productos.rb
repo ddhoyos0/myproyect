@@ -7,6 +7,7 @@ class CreateProductos < ActiveRecord::Migration[5.2]
       t.integer :valor_unitario
       t.integer :cantidad
       t.references :marca, foreign_key: true
+      t.references :unidad_medidas, foreign_key: true
 
       t.timestamps
     end
