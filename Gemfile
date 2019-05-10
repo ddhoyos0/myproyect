@@ -48,7 +48,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'  
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do
@@ -63,7 +63,7 @@ end
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # proyecto
-gem 'bootstrap', '~> 4.3.1' 
+gem 'bootstrap', '~> 4.3.1'
 gem "jquery-ui-rails"
 gem 'jquery-rails'
 gem 'simple_form'
@@ -73,6 +73,4 @@ gem 'devise'
 gem 'momentjs-rails'
 gem 'fullcalendar'
 gem 'fullcalendar-rails'
-
-
-
+gem "paperclip", "~> 6.0.0"

@@ -1,9 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @marca.nombre %>
-</p>
-
-<%= link_to 'Editar', edit_marca_path(@marca),class:"btn btn-warning" %> |
-<%= link_to 'Atras', marcas_path,class:"btn btn-dark" %>
+<div align="center">	
+  <div class="col-md-4 mb-1"></div>	
+    <div class="card"style="width:20rem;" >
+      <div class="card-body">
+        <p>
+          <strong>Nombre:</strong>
+          <%= @marca.nombre %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</br>
+<div align="center">
+  <%= link_to 'Editar', edit_marca_path(@marca),class:"btn btn-warning" %> |
+  <%= link_to 'Atras', marcas_path,class:"btn btn-dark" %>
+</div>

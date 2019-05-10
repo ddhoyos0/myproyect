@@ -1,29 +1,39 @@
 <p id="notice"><%= notice %></p>
+<div align="center">	
+  <div class="col-md-4 mb-1"></div>	
+    <div class="card"style="width:20rem;" >
+      <div class="card-body">	
 
-<p>
-  <strong>Tipo de Servicio:</strong>
-  <%= @servicio.tipo_de_servicio.nombre %>
-</p>
+        <p>
+          <strong>Tipo de Servicio:</strong>
+          <%= @servicio.tipo_de_servicio.nombre %>
+        </p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @servicio.nombre %>
-</p>
+        <p>
+          <strong>Nombre:</strong>
+          <%= @servicio.nombre %>
+        </p>
 
-<p>
-  <strong>Duración:</strong>
-  <%= @servicio.duracion %>
-</p>
+        <p>
+          <strong>Duración:</strong>
+          <%= @servicio.duracion %>
+        </p>
 
-<p>
-  <strong>Precio:</strong>
-  <%= @servicio.precio %>
-</p>
+        <p>
+          <strong>Precio:</strong>
+          <%= @servicio.precio %>
+        </p>
 
-<p>
-  <strong>Iva:</strong>
-  <%= @servicio.impuesto.valor %>
-</p>
-
-<%= link_to 'Editar', edit_servicio_path(@servicio) %> |
-<%= link_to 'Atras', servicios_path %>
+        <p>
+          <strong>Iva:</strong>
+          <%= @servicio.impuesto.valor %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</br>
+<div align="center">
+  <%= link_to 'Editar', edit_servicio_path(@servicio),class:"btn btn-warning" %> |
+  <%= link_to 'Atras', servicios_path ,class:"btn btn-dark"%>
+</div>

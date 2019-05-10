@@ -1,34 +1,44 @@
 <p id="notice"><%= notice %></p>
+<div align="center">	
+  <div class="col-md-4 mb-1"></div>	
+    <div class="card"style="width:20rem;" >
+      <div class="card-body">	
+        <p>
+          <strong>Codigo producto:</strong>
+          <%= @producto.codigo_producto %>
+        </p>
 
-<p>
-  <strong>Codigo producto:</strong>
-  <%= @producto.codigo_producto %>
-</p>
+        <p>
+          <strong>Nombre:</strong>
+          <%= @producto.nombre %>
+        </p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @producto.nombre %>
-</p>
+        <p>
+          <strong>Unidad:</strong>
+          <%= @producto.unidad %>
+        </p>
 
-<p>
-  <strong>Unidad:</strong>
-  <%= @producto.unidad %>
-</p>
+        <p>
+          <strong>Valor unitario:</strong>
+          <%= @producto.valor_unitario %>
+        </p>
 
-<p>
-  <strong>Valor unitario:</strong>
-  <%= @producto.valor_unitario %>
-</p>
+        <p>
+          <strong>Cantidad:</strong>
+          <%= @producto.cantidad %>
+        </p>
 
-<p>
-  <strong>Cantidad:</strong>
-  <%= @producto.cantidad %>
-</p>
+        <p>
+          <strong>Marca:</strong>
+          <%= @producto.marca.nombre %>
+        </p>
 
-<p>
-  <strong>Marca:</strong>
-  <%= @producto.marca.nombre %>
-</p>
-
-<%= link_to 'Editar', edit_producto_path(@producto),class:"btn btn-warning" %> |
-<%= link_to 'Atras', productos_path,class:"btn btn-dark" %>
+      </div>
+    </div>
+  </div>
+</div>
+</br>
+<div align="center">
+  <%= link_to 'Editar', edit_producto_path(@producto),class:"btn btn-warning" %> |
+  <%= link_to 'Atras', productos_path,class:"btn btn-dark" %>
+</div>

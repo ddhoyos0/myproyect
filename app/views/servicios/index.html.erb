@@ -22,9 +22,9 @@
         <td><%= servicio.duracion %></td> 
         <td><%= servicio.precio %></td>
         <td><%= servicio.impuesto.try(:valor) %></td>        
-        <td><%= link_to 'Mostrar', servicio %></td>
-        <td><%= link_to 'Editar', edit_servicio_path(servicio) %></td>
-        <td><%= link_to 'Eliminar', servicio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', servicio,class:"btn btn-info btn-sm" %></td>
+        <td><%= link_to 'Editar', edit_servicio_path(servicio), class:"btn btn-warning btn-sm" %></td>
+        <td><%= link_to 'Eliminar', servicio, method: :delete, data: { confirm: 'Estas seguro?' },class:"btn btn-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

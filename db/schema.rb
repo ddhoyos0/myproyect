@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_212639) do
+ActiveRecord::Schema.define(version: 2019_05_09_212909) do
 
   create_table "cita", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "servicio_id"
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 2019_05_05_212639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["persona_id"], name: "index_empleados_on_persona_id"
+  end
+
+  create_table "empresas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "logo_file_name"
+    t.string "logo_content_type"
+    t.integer "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.bigint "persona_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["persona_id"], name: "index_empresas_on_personas_id"
   end
 
   create_table "impuestos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -112,6 +123,7 @@ ActiveRecord::Schema.define(version: 2019_05_05_212639) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
+    t.integer "rol"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -119,6 +131,7 @@ ActiveRecord::Schema.define(version: 2019_05_05_212639) do
   add_foreign_key "cita", "empleados"
   add_foreign_key "cita", "servicios"
   add_foreign_key "empleados", "personas"
+  add_foreign_key "empresas", "personas"
   add_foreign_key "personas", "documentos"
   add_foreign_key "personas", "sexos", name: "fk_personas_1"
   add_foreign_key "productos", "marcas"

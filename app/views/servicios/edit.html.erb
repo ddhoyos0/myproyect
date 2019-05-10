@@ -1,6 +1,8 @@
-<h1>Editing Servicio</h1>
+<h1 align="center">Editar Servicio</h1>
 
 <%= render 'form', servicio: @servicio %>
-
-<%= link_to 'Show', @servicio %> |
-<%= link_to 'Back', servicios_path %>
+</br>
+<div align="center">
+  <%= link_to 'Mostrar', @servicio,class:"btn btn-warning" %> |
+  <%= link_to 'Atras', servicios_path,class:"btn btn-dark" %>
+</div>

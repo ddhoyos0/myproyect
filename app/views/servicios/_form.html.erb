@@ -2,25 +2,28 @@
 <%= simple_form_for(@servicio) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  
-  <div class="row"align ="right">
-    <div class="col-md-4 mb-1">      
-      <%= f.association :tipo_de_servicio,prompt: :translate %>
-    </div> 
-    <div class="col-md-4 mb-1">        
-      <%= f.input :nombre %>            
+  <div align="center" >
+    <div class="card"style="width:35rem;">
+      <div class="card-body">      
+        <div class="col-md-4 mb-1">      
+          <%= f.association :tipo_de_servicio,prompt: :translate %>
+        </div> 
+        <div class="col-md-4 mb-1">        
+          <%= f.input :nombre %>            
+        </div>
+        <div class="col-md-4 mb-1">
+          <%= f.input :duracion %>
+        </div>
+        <div class="col-md-4 mb-1">
+          <%= f.input :precio %>
+        </div>  
+        <div class="col-md-4 mb-1">
+          <%= f.association :impuesto,prompt: :translate %>
+        </div> 
+        </br>    
+        <div class="form-actions"align ="center">
+          <%= f.submit "Añadir Servicio", class:"btn btn-success" %>
+        </div>
     </div>
-    <div class="col-md-4 mb-1">
-      <%= f.input :duracion %>
-    </div>
-    <div class="col-md-4 mb-1">
-      <%= f.input :precio %>
-    </div>  
-     <div class="col-md-4 mb-1">
-      <%= f.association :impuesto,prompt: :translate %>
-    </div>          
-  </div>
-  <div class="form-actions"align ="center">
-      <%= f.submit "Añadir Servicio", class:"btn btn-success" %>
   </div>
 <% end %>

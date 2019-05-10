@@ -1,8 +1,9 @@
 class Persona < ApplicationRecord
+  has_many :empresa
+  has_many :empleado
   belongs_to :documento
   belongs_to :sexo
-  
-  has_many :empleado
+
   def name
     self.nombre
   end 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :empresas
   resources :impuestos
   resources :tipo_de_servicios
   resources :cita
